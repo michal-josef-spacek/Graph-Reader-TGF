@@ -11,6 +11,22 @@ use Encode qw(decode_utf8);
 # Version.
 our $VERSION = 0.01;
 
+# Edge callback.
+sub _edge_callback {
+	my ($self, $graph, $id1, $id2, $edge_label) = @_;
+	$graph->set_edge_attribute($id1, $id2, 'label', $edge_label);
+	return;
+}
+
+# Init.
+sub _init {
+	my ($self, $param_hr) = @_;
+	$self->SUPER::_init();
+	$self->{'edge_callback'} = $param_hr->{'edge_callback'} || \&_edge_callback;
+	$self->{'vertex_callback'} = $param_hr->{'vertex_callback'} || \&_vertex_callback;
+	return;
+}
+
 # Read graph subroutine.
 sub _read_graph {
 	my ($self, $graph, $fh) = @_;
@@ -28,17 +44,24 @@ sub _read_graph {
 		if ($vertexes) {
 			my ($id, $vertex_label) = split m/\s+/ms, $line, 2;
 			$graph->add_vertex($id);
-			$graph->set_vertex_attribute($id, 'label', $vertex_label);
+			$self->{'vertex_callback'}->($self, $graph,
+				$id, $vertex_label);
 
 		# Edges.
 		} else {
 			my ($id1, $id2, $edge_label) = split m/\s+/ms, $line, 3;
 			$graph->add_edge($id1, $id2);
-			$graph->set_edge_attribute($id1, $id2, 'label',
-				$edge_label);
+			$self->{'edge_callback'}->($self, $graph, $id1, $id2, $edge_label);
 		}
 		
 	}
+	return;
+}
+
+# Vertex callback.
+sub _vertex_callback {
+	my ($self, $graph, $id, $vertex_label) = @_;
+	$graph->set_vertex_attribute($id, 'label', $vertex_label);
 	return;
 }
 

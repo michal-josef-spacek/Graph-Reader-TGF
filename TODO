@@ -1,9 +1,12 @@
 TODO
 ====
 1. Man page.
-2. Callback vertex label parsing.
-3. Callback edge label parsing
 4.
 
 Applied
 =======
+2. Callback vertex label parsing.
+OK [20140602] skim
+
+3. Callback edge label parsing
+OK [20140602] skim
