@@ -15,7 +15,6 @@ our $VERSION = 0.01;
 sub _read_graph {
 	my ($self, $graph, $fh) = @_;
 	my $vertexes = 1;
-	my $vert_hr = {};
 	while (my $line = decode_utf8(<$fh>)) {
 		chomp $line;
 
@@ -28,13 +27,15 @@ sub _read_graph {
 		# Vertexes.
 		if ($vertexes) {
 			my ($id, $vertex_label) = split m/\s+/ms, $line, 2;
-			$graph->add_vertex($vertex_label);
-			$vert_hr->{$id} = $vertex_label;
+			$graph->add_vertex($id);
+			$graph->set_vertex_attribute($id, 'label', $vertex_label);
 
 		# Edges.
 		} else {
 			my ($id1, $id2, $edge_label) = split m/\s+/ms, $line, 3;
-			$graph->add_edge($vert_hr->{$id1}, $vert_hr->{$id2});
+			$graph->add_edge($id1, $id2);
+			$graph->set_edge_attribute($id1, $id2, 'label',
+				$edge_label);
 		}
 		
 	}
