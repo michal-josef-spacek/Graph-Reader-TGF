@@ -43,6 +43,9 @@ sub _read_graph {
 		# Vertexes.
 		if ($vertexes) {
 			my ($id, $vertex_label) = split m/\s+/ms, $line, 2;
+			if (! defined $vertex_label) {
+				$vertex_label = $id;
+			}
 			$graph->add_vertex($id);
 			$self->{'vertex_callback'}->($self, $graph,
 				$id, $vertex_label);
