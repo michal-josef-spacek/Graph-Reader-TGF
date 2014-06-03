@@ -15,6 +15,7 @@ META.yml
 README
 t/data/ex1.tgf
 t/data/ex2.tgf
+t/data/ex3.tgf
 t/Graph-Reader-TGF/00-use.t
 t/Graph-Reader-TGF/01-version.t
 t/Graph-Reader-TGF/02-pod_coverage.t
