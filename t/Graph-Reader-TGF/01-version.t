@@ -3,9 +3,9 @@ use strict;
 use warnings;
 
 # Modules.
-use Graph::Reader::UnicodeTree;
+use Graph::Reader::TGF;
 use Test::More 'tests' => 2;
 use Test::NoWarnings;
 
 # Test.
-is($Graph::Reader::UnicodeTree::VERSION, 0.01, 'Version.');
+is($Graph::Reader::TGF::VERSION, 0.01, 'Version.');

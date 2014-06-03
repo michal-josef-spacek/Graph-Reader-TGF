@@ -9,8 +9,8 @@ use Test::NoWarnings;
 BEGIN {
 
 	# Test.
-	use_ok('Graph::Reader::UnicodeTree');
+	use_ok('Graph::Reader::TGF');
 }
 
 # Test.
-require_ok('Graph::Reader::UnicodeTree');
+require_ok('Graph::Reader::TGF');

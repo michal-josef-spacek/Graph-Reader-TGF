@@ -13,8 +13,8 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
-t/Graph-Reader-UnicodeTree/00-use.t
-t/Graph-Reader-UnicodeTree/01-version.t
-t/Graph-Reader-UnicodeTree/02-pod_coverage.t
-t/Graph-Reader-UnicodeTree/03-pod.t
+t/Graph-Reader-TGF/00-use.t
+t/Graph-Reader-TGF/01-version.t
+t/Graph-Reader-TGF/02-pod_coverage.t
+t/Graph-Reader-TGF/03-pod.t
 TGF.pm
