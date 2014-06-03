@@ -22,8 +22,8 @@ sub _edge_callback {
 sub _init {
 	my ($self, $param_hr) = @_;
 	$self->SUPER::_init();
-	$self->{'edge_callback'} = $param_hr->{'edge_callback'} || \&_edge_callback;
-	$self->{'vertex_callback'} = $param_hr->{'vertex_callback'} || \&_vertex_callback;
+	$self->{'edge_callback'} = $param_hr->{'edge_callback'};
+	$self->{'vertex_callback'} = $param_hr->{'vertex_callback'};
 	return;
 }
 
@@ -47,14 +47,29 @@ sub _read_graph {
 				$vertex_label = $id;
 			}
 			$graph->add_vertex($id);
-			$self->{'vertex_callback'}->($self, $graph,
-				$id, $vertex_label);
+			if (exists $self->{'vertex_callback'}
+				&& $self->{'vertex_callback'}) {
+
+				$self->{'vertex_callback'}->($self, $graph,
+					$id, $vertex_label);
+			} else {
+				$self->_vertex_callback($graph, $id,
+					$vertex_label);
+			}
 
 		# Edges.
 		} else {
 			my ($id1, $id2, $edge_label) = split m/\s+/ms, $line, 3;
 			$graph->add_edge($id1, $id2);
-			$self->{'edge_callback'}->($self, $graph, $id1, $id2, $edge_label);
+			if (exists $self->{'edge_callback'}
+				&& $self->{'edge_callback'}) {
+
+				$self->{'edge_callback'}->($self, $graph, $id1,
+					$id2, $edge_label);
+			} else {
+				$self->_edge_callback($graph, $id1, $id2,
+					$edge_label);
+			}
 		}
 		
 	}
