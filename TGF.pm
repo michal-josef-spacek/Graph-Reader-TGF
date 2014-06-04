@@ -47,9 +47,7 @@ sub _read_graph {
 				$vertex_label = $id;
 			}
 			$graph->add_vertex($id);
-			if (exists $self->{'vertex_callback'}
-				&& $self->{'vertex_callback'}) {
-
+			if ($self->{'vertex_callback'}) {
 				$self->{'vertex_callback'}->($self, $graph,
 					$id, $vertex_label);
 			} else {
@@ -61,9 +59,7 @@ sub _read_graph {
 		} else {
 			my ($id1, $id2, $edge_label) = split m/\s+/ms, $line, 3;
 			$graph->add_edge($id1, $id2);
-			if (exists $self->{'edge_callback'}
-				&& $self->{'edge_callback'}) {
-
+			if ($self->{'edge_callback'}) {
 				$self->{'edge_callback'}->($self, $graph, $id1,
 					$id2, $edge_label);
 			} else {
