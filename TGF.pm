@@ -93,7 +93,7 @@ __END__
 
 =head1 NAME
 
-Graph::Reader::TGF - Perl class for reading a graph from unicode tree text format.
+Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 
 =head1 SYNOPSIS
 
@@ -111,7 +111,7 @@ Graph::Reader::TGF - Perl class for reading a graph from unicode tree text forma
  This doesn't take any arguments.
  Returns Graph::Reader::TGF object.
 
-=item C<read_graph($unicode_tree_file)>
+=item C<read_graph($tgf_file)>
 
  Read a graph from the specified file.
  The argument can either be a filename, or a filehandle for a previously opened file.
