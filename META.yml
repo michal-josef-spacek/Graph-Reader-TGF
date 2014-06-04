@@ -23,6 +23,7 @@ meta-spec:
 name: Graph-Reader-TGF
 no_index:
   directory:
+    - examples
     - inc
     - t
 requires:

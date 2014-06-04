@@ -1,6 +1,5 @@
 TODO
 ====
-1. Man page.
 4. undirected graph via constructor.
 5.
 
@@ -11,3 +10,6 @@ OK [20140602] skim
 
 3. Callback edge label parsing
 OK [20140602] skim
+
+1. Man page.
+OK [20140604] skim
