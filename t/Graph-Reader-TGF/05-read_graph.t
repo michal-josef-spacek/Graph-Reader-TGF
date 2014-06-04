@@ -6,7 +6,7 @@ use warnings;
 use Encode qw(decode_utf8);
 use File::Object;
 use Graph::Reader::TGF;
-use Test::More 'tests' => 12;
+use Test::More 'tests' => 19;
 use Test::NoWarnings;
 
 # Data dir.
@@ -40,3 +40,39 @@ is($ret->get_vertex_attribute('2', 'label'), decode_utf8('ěščřžýáíí'),
 	'Get vertex label attribute for second utf8 encoded vertex.');
 is($ret->get_edge_attribute('1', '2', 'label'), decode_utf8('中國'),
 	'Get edge utf8 label attribute.');
+
+# Test.
+$obj = Graph::Reader::TGF->new(
+	'vertex_callback' => sub {
+		my ($self, $graph, $id, $vertex_label) = @_;
+		$graph->set_vertex_attribute($id, 'label',
+			'XXX'.$vertex_label.'XXX');
+		return;
+	},
+);
+$ret = $obj->read_graph($data_dir->file('ex1.tgf')->s);
+is($ret, '1-2', "Get simple graph with 'vertex_callback' callback.");
+is($ret->get_vertex_attribute('1', 'label'), 'XXX1XXX',
+	'Get vertex label attribute for first vertex changed by user '.
+	'callback.');
+is($ret->get_vertex_attribute('2', 'label'), 'XXX2XXX',
+	'Get vertex label attribute for second vertex changed by user '.
+	'callback.');
+
+# Test.
+$obj = Graph::Reader::TGF->new(
+	'edge_callback' => sub {
+		my ($self, $graph, $id1, $id2, $edge_label) = @_;
+		$graph->set_edge_attribute($id1, $id2, 'label',
+			'XXX'.$edge_label.'XXX');
+		return;
+	},
+);
+$ret = $obj->read_graph($data_dir->file('ex2.tgf')->s);
+is($ret, '1-2', "Get simple graph with labels with 'edge_callback' callback.");
+is($ret->get_vertex_attribute('1', 'label'), 'Node #1',
+	'Get vertex label attribute for first named vertex.');
+is($ret->get_vertex_attribute('2', 'label'), 'Node #2',
+	'Get vertex label attribute for second named vertex.');
+is($ret->get_edge_attribute('1', '2', 'label'), 'XXXEdgeXXX',
+	'Get edge label attribute changed by user callback.');
