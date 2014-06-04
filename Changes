@@ -1,6 +1,7 @@
 0.02
  - Add tests with callbacks.
  - Fix doc (bad naming).
+ - Fix link in doc.
  - Remove obsolete code.
 
 0.01 2014-06-04T10:00:25+02:00

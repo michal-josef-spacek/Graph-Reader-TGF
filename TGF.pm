@@ -118,7 +118,7 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 =head1 TGF FILE FORMAT
 
  TGF = Trivial Graph Format
- TGF file format is described on L<https://en.wikipedia.org/wiki/Trivial_Graph_Format|English Wikipedia - Trivial Graph Format>
+ TGF file format is described on L<English Wikipedia - Trivial Graph Format|https://en.wikipedia.org/wiki/Trivial_Graph_Format>
  Example:
  1 First node
  2 Second node
