@@ -9,7 +9,7 @@ use warnings;
 use Encode qw(decode_utf8);
 
 # Version.
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Edge callback.
 sub _edge_callback {
@@ -255,6 +255,6 @@ BSD license.
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
