@@ -10,7 +10,7 @@ use Encode qw(decode_utf8);
 use Error::Pure qw(err);
 
 # Version.
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # Edge callback.
 sub _edge_callback {
@@ -272,6 +272,6 @@ BSD license.
 
 =head1 VERSION
 
-0.02
+0.03
 
 =cut
