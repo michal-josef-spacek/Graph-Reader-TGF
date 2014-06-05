@@ -26,6 +26,11 @@ TGF FILE FORMAT
      #
      1 2 Edge between the two
 
+ERRORS
+     new():
+             Parameter 'edge_callback' isn't reference to code.
+             Parameter 'vertex_callback' isn't reference to code.
+
 EXAMPLE1
      # Pragmas.
      use strict;
@@ -121,7 +126,7 @@ EXAMPLE2
      # 1-10,1-2,1-3,1-5,1-6,3-4,6-7,6-8,6-9
 
 DEPENDENCIES
-    Encode, Graph::Reader.
+    Encode, Error::Pure, Graph::Reader.
 
 SEE ALSO
     Graph::Reader, Graph::Reader::Dot, Graph::Reader::HTK,

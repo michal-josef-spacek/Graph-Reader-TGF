@@ -4,9 +4,11 @@ use warnings;
 
 # Modules.
 use Encode qw(decode_utf8);
+use English qw(-no_match_vars);
+use Error::Pure::Utils qw(clean);
 use File::Object;
 use Graph::Reader::TGF;
-use Test::More 'tests' => 19;
+use Test::More 'tests' => 24;
 use Test::NoWarnings;
 
 # Data dir.
@@ -15,6 +17,18 @@ my $data_dir = File::Object->new->up->dir('data')->set;
 # Test.
 my $obj = Graph::Reader::TGF->new;
 my $ret = $obj->read_graph($data_dir->file('ex1.tgf')->s);
+is($ret, '1-2', 'Get simple graph.');
+is($ret->get_vertex_attribute('1', 'label'), 1,
+	'Get vertex label attribute for first vertex.');
+is($ret->get_vertex_attribute('2', 'label'), 2,
+	'Get vertex label attribute for second vertex.');
+
+# Test.
+$obj = Graph::Reader::TGF->new(
+	'edge_callback' => undef,
+	'vertex_callback' => undef,
+);
+$ret = $obj->read_graph($data_dir->file('ex1.tgf')->s);
 is($ret, '1-2', 'Get simple graph.');
 is($ret->get_vertex_attribute('1', 'label'), 1,
 	'Get vertex label attribute for first vertex.');
@@ -76,3 +90,23 @@ is($ret->get_vertex_attribute('2', 'label'), 'Node #2',
 	'Get vertex label attribute for second named vertex.');
 is($ret->get_edge_attribute('1', '2', 'label'), 'XXXEdgeXXX',
 	'Get edge label attribute changed by user callback.');
+
+# Test.
+eval {
+	$obj = Graph::Reader::TGF->new(
+		'vertex_callback' => 'foo',
+	);
+};
+is($EVAL_ERROR, "Parameter 'vertex_callback' isn't reference to code.\n",
+	"Parameter 'vertex_callback' isn't reference to code.");
+clean();
+
+# Test.
+eval {
+	$obj = Graph::Reader::TGF->new(
+		'edge_callback' => 'foo',
+	);
+};
+is($EVAL_ERROR, "Parameter 'edge_callback' isn't reference to code.\n",
+	"Parameter 'edge_callback' isn't reference to code.");
+clean();

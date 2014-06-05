@@ -1,7 +1,6 @@
 TODO
 ====
 4. undirected graph via constructor.
-5. Check for callbacks?
 6.
 
 Applied
@@ -14,3 +13,6 @@ OK [20140602] skim
 
 1. Man page.
 OK [20140604] skim
+
+5. Check for callbacks?
+OK [20140605] skim

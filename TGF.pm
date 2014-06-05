@@ -7,6 +7,7 @@ use warnings;
 
 # Modules.
 use Encode qw(decode_utf8);
+use Error::Pure qw(err);
 
 # Version.
 our $VERSION = 0.02;
@@ -22,7 +23,19 @@ sub _edge_callback {
 sub _init {
 	my ($self, $param_hr) = @_;
 	$self->SUPER::_init();
+	if (exists $param_hr->{'edge_callback'}
+		&& defined $param_hr->{'edge_callback'}
+		&& ref $param_hr->{'edge_callback'} ne 'CODE') {
+
+		err "Parameter 'edge_callback' isn't reference to code.";
+	}
 	$self->{'edge_callback'} = $param_hr->{'edge_callback'};
+	if (exists $param_hr->{'vertex_callback'}
+		&& defined $param_hr->{'vertex_callback'}
+		&& ref $param_hr->{'vertex_callback'} ne 'CODE') {
+
+		err "Parameter 'vertex_callback' isn't reference to code.";
+	}
 	$self->{'vertex_callback'} = $param_hr->{'vertex_callback'};
 	return;
 }
@@ -125,6 +138,12 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
  #
  1 2 Edge between the two
 
+=head1 ERRORS
+
+ new():
+         Parameter 'edge_callback' isn't reference to code.
+         Parameter 'vertex_callback' isn't reference to code.
+
 =head1 EXAMPLE1
 
  # Pragmas.
@@ -224,6 +243,7 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 =head1 DEPENDENCIES
 
 L<Encode>,
+L<Error::Pure>,
 L<Graph::Reader>.
 
 =head1 SEE ALSO
