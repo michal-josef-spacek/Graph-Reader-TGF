@@ -29,7 +29,6 @@ no_index:
 requires:
   Encode: 0
   Graph::Reader: 0
-  Readonly: 0
   perl: 5.6.2
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Graph-Reader-TGF

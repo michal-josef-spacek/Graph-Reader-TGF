@@ -13,7 +13,6 @@ name 'Graph-Reader-TGF';
 readme_from 'TGF.pm';
 requires 'Encode' => 0;
 requires 'Graph::Reader' => 0;
-requires 'Readonly' => 0;
 requires 'perl' => '5.6.2';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=Graph-Reader-TGF';

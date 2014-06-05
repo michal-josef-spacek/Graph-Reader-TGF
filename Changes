@@ -4,6 +4,7 @@
  - Fix doc (bad naming).
  - Fix link in doc.
  - Remove obsolete code.
+ - Remove obsolete Readonly dependency.
 
 0.01 2014-06-04T10:00:25+02:00
  - First version.
