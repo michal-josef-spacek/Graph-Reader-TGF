@@ -10,7 +10,7 @@ use Encode qw(decode_utf8);
 use Error::Pure qw(err);
 
 # Version.
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 # Edge callback.
 sub _edge_callback {
@@ -277,6 +277,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.03
+0.04
 
 =cut
