@@ -2,6 +2,8 @@ Changes
 examples/ex1.pl
 examples/ex2.pl
 inc/Module/Install.pm
+inc/Module/Install/AuthorRequires.pm
+inc/Module/Install/AuthorTests.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
@@ -19,10 +21,10 @@ SIGNATURE
 t/data/ex1.tgf
 t/data/ex2.tgf
 t/data/ex3.tgf
-t/Graph-Reader-TGF/00-use.t
-t/Graph-Reader-TGF/01-version.t
-t/Graph-Reader-TGF/02-pod_coverage.t
-t/Graph-Reader-TGF/03-pod.t
-t/Graph-Reader-TGF/04-new.t
-t/Graph-Reader-TGF/05-read_graph.t
+t/Graph-Reader-TGF/01-use.t
+t/Graph-Reader-TGF/02-version.t
+t/Graph-Reader-TGF/03-new.t
+t/Graph-Reader-TGF/04-read_graph.t
 TGF.pm
+xt/Graph-Reader-TGF/01-pod_coverage.t
+xt/Graph-Reader-TGF/02-pod.t
