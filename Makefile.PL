@@ -7,7 +7,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Perl class for reading a graph from TGF format.';
-author 'Michal Špaček <skim@cpan.org>';
+author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Graph-Reader-TGF';
 readme_from 'TGF.pm';
