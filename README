@@ -129,9 +129,11 @@ DEPENDENCIES
     Encode, Error::Pure, Graph::Reader.
 
 SEE ALSO
-    Graph::Reader, Graph::Reader::Dot, Graph::Reader::HTK,
-    Graph::Reader::LoadClassHierarchy, Graph::Reader::UnicodeTree,
-    Graph::Reader::TGF::CSV, Graph::Reader::XML.
+    Graph::Reader
+        base class for Graph file format readers
+
+    Task::Graph::Reader
+        Install the Graph::Reader modules.
 
 REPOSITORY
     <https://github.com/tupinek/Graph-Reader-TGF>
