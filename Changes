@@ -1,6 +1,7 @@
 0.04
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Update Module::Install to 1.19 version.
+ - Update copyright years.
 
 0.03 2015-10-29T14:24:50+01:00
  - Fix LICENSE file.
