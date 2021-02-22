@@ -1,7 +1,8 @@
 TODO
 ====
 4. undirected graph via constructor.
-6.
+6. Document 'vertex_callback' and 'edge_callback' parameters.
+7.
 
 Applied
 =======
