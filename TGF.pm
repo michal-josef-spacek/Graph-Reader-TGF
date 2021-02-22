@@ -256,7 +256,7 @@ Install the Graph::Reader modules.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/Graph-Reader-TGF>
+L<https://github.com/michal-josef-spacek/Graph-Reader-TGF>
 
 =head1 AUTHOR
 
