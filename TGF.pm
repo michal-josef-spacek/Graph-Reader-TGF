@@ -1,11 +1,9 @@
 package Graph::Reader::TGF;
 
-# Pragmas.
 use base qw(Graph::Reader);
 use strict;
 use warnings;
 
-# Modules.
 use Encode qw(decode_utf8);
 use Error::Pure qw(err);
 
@@ -146,11 +144,9 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Graph::Reader::TGF;
  use IO::Barf qw(barf);
  use File::Temp qw(tempfile);
@@ -186,11 +182,9 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Graph::Reader::TGF;
  use IO::Barf qw(barf);
  use File::Temp qw(tempfile);

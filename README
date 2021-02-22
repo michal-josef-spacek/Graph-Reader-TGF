@@ -32,11 +32,9 @@ ERRORS
              Parameter 'vertex_callback' isn't reference to code.
 
 EXAMPLE1
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Graph::Reader::TGF;
      use IO::Barf qw(barf);
      use File::Temp qw(tempfile);
@@ -71,11 +69,9 @@ EXAMPLE1
      # 1-2
 
 EXAMPLE2
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Graph::Reader::TGF;
      use IO::Barf qw(barf);
      use File::Temp qw(tempfile);
