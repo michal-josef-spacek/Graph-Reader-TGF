@@ -260,13 +260,13 @@ L<https://github.com/michal-josef-spacek/Graph-Reader-TGF>
 
 =head1 AUTHOR
 
-Michal Špaček L<mailto:skim@cpan.org>
+Michal Josef Špaček L<mailto:skim@cpan.org>
 
 L<http://skim.cz>
 
 =head1 LICENSE AND COPYRIGHT
 
-© Michal Špaček 2014-2021
+© Michal Josef Špaček 2014-2021
 
 BSD 2-Clause License
 

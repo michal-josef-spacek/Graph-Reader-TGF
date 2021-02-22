@@ -1,7 +1,7 @@
 ---
 abstract: 'Perl class for reading a graph from TGF format.'
 author:
-  - 'Michal Spacek <skim@cpan.org>'
+  - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
   Encode: 0
   English: 0
