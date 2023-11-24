@@ -3,9 +3,9 @@
 use strict;
 use warnings;
 
+use File::Temp qw(tempfile);
 use Graph::Reader::TGF;
 use IO::Barf qw(barf);
-use File::Temp qw(tempfile);
 
 # Example data.
 my $data = <<'END';

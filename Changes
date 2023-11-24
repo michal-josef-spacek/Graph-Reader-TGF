@@ -3,6 +3,7 @@
  - Improve SYNOPSIS section in doc.
  - Move bugtracker to github.
  - Rename example files to better names.
+ - Sort modules used in examples in doc.
  - Update Module::Install to 1.21 version.
  - Update author github username.
  - Update author name.

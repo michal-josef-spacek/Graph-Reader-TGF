@@ -149,9 +149,9 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
  use strict;
  use warnings;
 
+ use File::Temp qw(tempfile);
  use Graph::Reader::TGF;
  use IO::Barf qw(barf);
- use File::Temp qw(tempfile);
 
  # Example data.
  my $data = <<'END';
@@ -189,9 +189,9 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
  use strict;
  use warnings;
 
+ use File::Temp qw(tempfile);
  use Graph::Reader::TGF;
  use IO::Barf qw(barf);
- use File::Temp qw(tempfile);
 
  # Example data.
  my $data = <<'END';
