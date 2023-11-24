@@ -2,6 +2,7 @@
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Improve SYNOPSIS section in doc.
  - Move bugtracker to github.
+ - Move constructor tests to constructor test file.
  - Rename example files to better names.
  - Rewrite doc to use of =head2.
  - Sort modules used in examples in doc.
