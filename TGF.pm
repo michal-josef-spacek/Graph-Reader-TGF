@@ -105,6 +105,7 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 =head1 SYNOPSIS
 
  use Graph::Reader::TGF;
+
  my $obj = Graph::Reader::TGF->new;
  my $graph = $obj->read_graph($tgf_file);
 

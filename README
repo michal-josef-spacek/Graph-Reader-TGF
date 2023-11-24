@@ -3,6 +3,7 @@ NAME
 
 SYNOPSIS
      use Graph::Reader::TGF;
+
      my $obj = Graph::Reader::TGF->new;
      my $graph = $obj->read_graph($tgf_file);
 
