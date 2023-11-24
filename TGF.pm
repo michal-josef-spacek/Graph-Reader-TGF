@@ -7,7 +7,6 @@ use warnings;
 use Encode qw(decode_utf8);
 use Error::Pure qw(err);
 
-# Version.
 our $VERSION = 0.04;
 
 # Edge callback.
