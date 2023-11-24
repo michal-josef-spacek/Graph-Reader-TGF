@@ -144,6 +144,8 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
 
 =head1 EXAMPLE1
 
+=for comment filename=read_tgf_trivial_and_print.pl
+
  use strict;
  use warnings;
 
@@ -181,6 +183,8 @@ Graph::Reader::TGF - Perl class for reading a graph from TGF format.
  # 1-2
 
 =head1 EXAMPLE2
+
+=for comment filename=read_tgf_advanced_and_print.pl
 
  use strict;
  use warnings;
